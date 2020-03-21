@@ -1,6 +1,6 @@
 # https://www.hackerrank.com/contests/coding-challenge/challenges/sherlock-and-gcd/problem
 
-# Single case of runtime error
+# Single case of runtime error (for arrays of length 1)
 import math
 
 def solve(a):
