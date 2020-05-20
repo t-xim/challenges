@@ -1,7 +1,25 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+#
+# Complete the 'calcMissing' function below.
+#
+# The function accepts STRING_ARRAY readings as parameter.
+#
 import numpy as np
 import pandas as pd
 import datetime as dt
 from scipy import interpolate
+
+def zeroMin(number):
+    return max(number, 0)
 
 def splitReadings(readings):
     df = pd.DataFrame(readings)
@@ -38,5 +56,8 @@ def calcMissing(readings):
 
     func = interpolate.UnivariateSpline(xTime, xMercury, s=1)
     output = func(yTime)
+    output = list(map(zeroMin, output))
 
-    return list(output)
+    for i in range(0, len(output)):
+        print(output[i])
+if __name__ == '__main__':
